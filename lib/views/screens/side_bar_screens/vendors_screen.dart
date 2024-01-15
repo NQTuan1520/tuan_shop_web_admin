@@ -14,14 +14,17 @@ class _VendorsScreenState extends State<VendorsScreen> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade700),
-            color: Colors.yellow.shade900,
+            color: Colors.orange,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -43,10 +46,10 @@ class _VendorsScreenState extends State<VendorsScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Manage Vendors',
+                      'THÔNG TIN NGƯỜI BÁN',
                       style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
@@ -57,12 +60,13 @@ class _VendorsScreenState extends State<VendorsScreen> {
               ),
               Row(
                 children: [
-                  _rowHeader(1, 'LOGO'),
-                  _rowHeader(3, 'BUSSINESS NAME'),
-                  _rowHeader(2, 'CITY'),
-                  _rowHeader(2, 'STATE'),
-                  _rowHeader(1, 'ACTION'),
-                  _rowHeader(1, 'VIEW MORE'),
+                  _rowHeader(1, 'ẢNH'),
+                  _rowHeader(2, 'TÊN CÔNG TY'),
+                  _rowHeader(1, 'ĐIỆN THOẠI'),
+                  _rowHeader(2, 'QUẬN/HUYỆN'),
+                  _rowHeader(1, 'THÀNH PHỐ'),
+                  _rowHeader(2, 'KIỂM DUYỆT'),
+                  _rowHeader(1, 'XOÁ'),
                 ],
               ),
               VendorList(),

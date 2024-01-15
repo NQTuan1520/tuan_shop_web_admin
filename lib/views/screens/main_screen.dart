@@ -4,7 +4,7 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/buyers_screen.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/categories_screen.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/dashboard_screen.dart';
-import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/oder_screen.dart';
+import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/order_screen.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/products_screen.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/upload_banner_screen.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/vendors_screen.dart';
@@ -77,48 +77,50 @@ class _MainScreenState extends State<MainScreen> {
     return AdminScaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.yellow.shade900,
-        title: Text('Management'),
+        backgroundColor: Colors.orange,
+        title: Text('Quản Trị Viên'),
       ),
       sideBar: SideBar(
+        textStyle: TextStyle(color: Color((0xFFE69138))),
+        activeBackgroundColor: Color(0xFFE69138),
         items: [
           AdminMenuItem(
-            title: 'Dashboard',
+            title: 'Bảng điều khiển',
             icon: Icons.dashboard,
             route: DashboardScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Vendors',
+            title: 'Quản lý Người Bán',
             icon: CupertinoIcons.person_3,
             route: VendorsScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Buyers',
+            title: 'Quản lý Người Mua',
             icon: CupertinoIcons.person,
             route: BuyersScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Withdrawal',
+            title: 'Quản lý rút tiền',
             icon: CupertinoIcons.money_dollar,
             route: WithdrawalScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Orders',
+            title: 'Quản lý giao dịch đơn hàng',
             icon: CupertinoIcons.shopping_cart,
             route: OrderScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Categories',
+            title: 'Quản lý danh mục sản phẩm',
             icon: Icons.category,
             route: CategoriesScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Products',
+            title: 'Quản lý sản phẩm',
             icon: Icons.shop,
             route: ProductScreen.routeName,
           ),
           AdminMenuItem(
-            title: 'Upload Banners',
+            title: 'Quản lý Banner quảng cáo',
             icon: CupertinoIcons.add,
             route: UploadBannerScreen.routeName,
           ),

@@ -71,6 +71,20 @@ class _OrderWidgetState extends State<OrderWidget> {
 
                 vendorData(
                     Text(
+                      "\$" + ' ' + vendor['productPrice'].toString(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    1),
+
+                vendorData(
+                    Text(
+                      vendor['quantity'].toString(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    1),
+
+                vendorData(
+                    Text(
                       vendor['fullName'],
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -81,17 +95,7 @@ class _OrderWidgetState extends State<OrderWidget> {
                       vendor['placeName'],
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    3),
-
-                vendorData(
-                    ElevatedButton(
-                        onPressed: () async {},
-                        child: Text(
-                          'Reject',
-                          style: TextStyle(
-                              color: Colors.red, fontWeight: FontWeight.bold),
-                        )),
-                    1),
+                    2),
               ],
             );
           }),

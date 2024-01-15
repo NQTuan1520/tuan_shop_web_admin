@@ -59,7 +59,7 @@ class _WithdrawalListState extends State<WithdrawalList> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      1),
+                      2),
                   withdrewdata(
                       Text(
                         '\$' + " " + _withdrewData['Amount'].toString(),
@@ -67,7 +67,7 @@ class _WithdrawalListState extends State<WithdrawalList> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      3),
+                      1),
                   withdrewdata(
                       Text(
                         _withdrewData['BankName'],

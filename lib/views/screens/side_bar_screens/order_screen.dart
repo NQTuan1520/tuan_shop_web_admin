@@ -11,13 +11,15 @@ class OrderScreen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey.shade700),
-          color: Colors.yellow.shade900,
+          color: Colors.orange,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+            ),
           ),
         ),
       ),
@@ -33,20 +35,21 @@ class OrderScreen extends StatelessWidget {
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.all(10),
             child: const Text(
-              'Orders',
+              'GIAO DỊCH ĐƠN HÀNG',
               style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
               ),
             ),
           ),
           Row(
             children: [
-              _rowHeader('IMAGE', 1),
-              _rowHeader('PRODUCT NAME', 1),
-              _rowHeader('FULL NAME', 2),
-              _rowHeader('ADDRESS', 3),
-              _rowHeader('ACTION', 1),
+              _rowHeader('ẢNH', 1),
+              _rowHeader('TÊN SẢN PHẨM', 1),
+              _rowHeader('GIÁ TIỀN', 1),
+              _rowHeader('SỐ LƯỢNG MUA', 1),
+              _rowHeader('TÊN NGƯỜI MUA', 2),
+              _rowHeader('ĐỊA CHỈ NHẬN HÀNG', 2),
             ],
           ),
           OrderWidget(),

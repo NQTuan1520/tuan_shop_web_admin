@@ -42,7 +42,7 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
   }
 
   uploadToFireStore() async {
-    EasyLoading.show();
+    EasyLoading.show(status: 'Đang lưu');
     if (_image != null) {
       String imageURL = await _uploadBannersToStorage(_image);
       await _firestore
@@ -67,10 +67,10 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.all(10),
             child: const Text(
-              'Banners',
+              'BANNERS QUẢNG CÁO',
               style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
               ),
             ),
           ),
@@ -94,7 +94,7 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
                       child: _image != null
                           ? Image.memory(_image, fit: BoxFit.cover)
                           : Center(
-                              child: Text('Banner'),
+                              child: Text('Ảnh Banner'),
                             ),
                     ),
                     SizedBox(
@@ -102,12 +102,17 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.yellow.shade900,
+                        primary: Colors.orangeAccent,
+                        elevation: 5,
+                        shadowColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                       onPressed: () {
                         pickImage();
                       },
-                      child: Text('Upload Image'),
+                      child: Text('CHỌN BANNER'),
                     ),
                   ],
                 ),
@@ -117,12 +122,17 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.yellow.shade900,
+                  primary: Colors.orangeAccent,
+                  elevation: 5,
+                  shadowColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
                 onPressed: () {
                   uploadToFireStore();
                 },
-                child: Text('Save'),
+                child: Text('LƯU'),
               ),
             ],
           ),
@@ -139,8 +149,8 @@ class _UploadBannerScreenState extends State<UploadBannerScreen> {
               child: Text(
                 "Banners",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 36,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 30,
                 ),
               ),
             ),

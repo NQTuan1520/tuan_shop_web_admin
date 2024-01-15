@@ -67,16 +67,22 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                         order['productName'],
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      3),
+                      2),
                   vendorData(
                       Text(
                         "\$" + ' ' + order['productPrice'].toString(),
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      2),
+                      1),
                   vendorData(
                       Text(
                         order['quantity'].toString(),
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      1),
+                  vendorData(
+                      Text(
+                        order['businessName'],
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       2),
@@ -92,7 +98,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                             });
                           },
                           child: Text(
-                            'Approved',
+                            'ĐỒNG Ý',
                             style: TextStyle(
                                 color: Colors.blueAccent,
                                 fontWeight: FontWeight.bold),
@@ -107,22 +113,12 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                           });
                         },
                         child: Text(
-                          'Reject',
+                          'TỪ CHỐI',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.red),
                         ),
                       ),
-                      1),
-                  vendorData(
-                      ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'View More',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          )),
                       1),
                 ],
               );

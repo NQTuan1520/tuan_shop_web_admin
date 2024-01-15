@@ -15,14 +15,17 @@ class _BuyersScreenState extends State<BuyersScreen> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade700),
-            color: Colors.yellow.shade900,
+            color: Colors.orange,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -44,10 +47,10 @@ class _BuyersScreenState extends State<BuyersScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Manage Buyers',
+                      'THÔNG TIN NGƯỜI MUA',
                       style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
@@ -58,13 +61,12 @@ class _BuyersScreenState extends State<BuyersScreen> {
               ),
               Row(
                 children: [
-                  _rowHeader(1, 'PROFILE IMAGE'),
-                  _rowHeader(2, 'FULL NAME'),
+                  _rowHeader(1, 'ẢNH HỒ SƠ'),
+                  _rowHeader(2, 'HỌ VÀ TÊN'),
                   _rowHeader(2, 'EMAIL'),
-                  _rowHeader(3, 'ADDRESS'),
-                  _rowHeader(1, 'TELEPHONE'),
-                  _rowHeader(1, 'ACTION'),
-                  _rowHeader(1, 'VIEW MORE'),
+                  _rowHeader(3, 'ĐỊA CHỈ'),
+                  _rowHeader(1, 'ĐIỆN THOẠI'),
+                  _rowHeader(1, 'XOÁ'),
                 ],
               ),
               BuyersListWidget(),

@@ -38,7 +38,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   }
 
   uploadCategory() async {
-    EasyLoading.show();
+    EasyLoading.show(status: 'Đang lưu');
     if (_formKey.currentState!.validate()) {
       String imageURL = await _uploadCategoryBannerToStorage(_image);
 
@@ -46,7 +46,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         'image': imageURL,
         'categoryName': categoryName,
       }).whenComplete(() {
-
         setState(() {
           _image = null;
           _formKey.currentState!.reset();
@@ -81,10 +80,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Category',
+                'DANH MỤC SẢN PHẨM',
                 style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
                 ),
               ),
             ),
@@ -108,7 +107,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         child: _image != null
                             ? Image.memory(_image, fit: BoxFit.cover)
                             : Center(
-                                child: Text('Category Image'),
+                                child: Text('Ảnh danh mục'),
                               ),
                       ),
                       SizedBox(
@@ -116,12 +115,17 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.yellow.shade900,
+                          primary: Colors.orangeAccent,
+                          elevation: 5,
+                          shadowColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                         ),
                         onPressed: () {
                           _pickImage();
                         },
-                        child: Text('Upload Image'),
+                        child: Text('CHỌN ẢNH'),
                       ),
                     ],
                   ),
@@ -135,14 +139,14 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       },
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Please Category Name Must not be empty';
+                          return 'Hãy điền tên danh mục sản phẩm!';
                         } else {
                           return null;
                         }
                       },
                       decoration: InputDecoration(
-                        labelText: 'Enter Category Name',
-                        hintText: 'Enter Category Name',
+                        labelText: 'Điền tên danh mục sản phẩm',
+                        hintText: 'Điền tên danh mục sản phẩm',
                       ),
                     ),
                   ),
@@ -152,12 +156,17 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow.shade900,
+                    primary: Colors.orangeAccent,
+                    elevation: 5,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                   onPressed: () {
                     uploadCategory();
                   },
-                  child: Text('Save'),
+                  child: Text('LƯU'),
                 ),
               ],
             ),
@@ -172,8 +181,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               child: Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'Categories',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  'Danh mục sản phẩm',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ),

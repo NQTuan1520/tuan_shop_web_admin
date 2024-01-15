@@ -92,19 +92,19 @@ class _BuyersListWidgetState extends State<BuyersListWidget> {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text('Warning'),
-                                content: Text('Do you really want to delete this vendor?'),
+                                title: Text('CẢNH BÁO'),
+                                content: Text('Bạn có thực sự muốn xoá tài khoản Người Mua này không?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () {
                                       Navigator.pop(context); // Đóng hộp thoại
                                     },
-                                    child: Text('Cancel'),
+                                    child: Text('Huỷ'),
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
                                       await FirebaseFirestore.instance
-                                          .collection('vendors')
+                                          .collection('buyers')
                                           .doc(buyerData['buyerID'])
                                           .delete();
 
@@ -114,7 +114,7 @@ class _BuyersListWidgetState extends State<BuyersListWidget> {
 
                                       Navigator.pop(context); // Đóng hộp thoại sau khi xoá thành công
                                     },
-                                    child: Text('Delete'),
+                                    child: Text('Đồng ý'),
                                   ),
                                 ],
                               );
@@ -122,19 +122,9 @@ class _BuyersListWidgetState extends State<BuyersListWidget> {
                           );
                         },
                         child: Text(
-                          'Delete',
+                          'XOÁ',
                           style: TextStyle(
                               color: Colors.red, fontWeight: FontWeight.bold),
-                        )),
-                    1),
-                vendorData(
-                    ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'View More',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
                         )),
                     1),
               ],

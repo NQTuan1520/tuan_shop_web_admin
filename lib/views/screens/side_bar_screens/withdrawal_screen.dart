@@ -16,14 +16,17 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade700),
-            color: Colors.yellow.shade900,
+            color: Colors.orange,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -44,10 +47,10 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'withdrawal',
+                    'THÔNG TIN RÚT TIỀN',
                     style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
@@ -58,12 +61,12 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
             ),
             Row(
               children: [
-                _rowHeader(1, 'NAME'),
-                _rowHeader(3, 'AMOUNT'),
-                _rowHeader(2, 'Bank NAME'),
-                _rowHeader(2, 'BANK ACCOUNT'),
+                _rowHeader(2, 'TÊN NGƯỜI NHẬN'),
+                _rowHeader(1, 'TIỀN'),
+                _rowHeader(2, 'TÊN NGÂN HÀNG'),
+                _rowHeader(2, 'SỐ TÀI KHOẢN NGÂN HÀNG'),
                 _rowHeader(1, 'EMAIL'),
-                _rowHeader(1, 'PHONE'),
+                _rowHeader(1, 'ĐIỆN THOẠI'),
               ],
             ),
             WithdrawalList(),

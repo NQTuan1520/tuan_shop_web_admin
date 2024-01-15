@@ -70,7 +70,14 @@ class _VendorListState extends State<VendorList> {
                       vendor.businessName.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    3),
+                    2),
+
+                vendorData(
+                    Text(
+                      vendor.phoneNumber.toString(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    1),
 
                 vendorData(
                     Text(
@@ -84,7 +91,7 @@ class _VendorListState extends State<VendorList> {
                       vendor.stateValue.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    2),
+                    1),
 
                 vendorData(
                     vendor.approved == true
@@ -98,7 +105,7 @@ class _VendorListState extends State<VendorList> {
                           });
                         },
                         child: Text(
-                          'Reject',
+                          'TỪ CH',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold),
@@ -113,13 +120,13 @@ class _VendorListState extends State<VendorList> {
                         });
                       },
                       child: Text(
-                        'Approved',
+                        'ĐỒNG Ý',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.yellow),
                       ),
                     ),
-                    1),
+                    2),
 
                 vendorData(
                     ElevatedButton(
@@ -128,20 +135,19 @@ class _VendorListState extends State<VendorList> {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text('Warning'),
-                                content: Text('Do you really want to delete this vendor?'),
+                                title: Text('CẢNH BÁO'),
+                                content: Text('Bạn có thực sự muốn xoá tài khoản Người Bán này ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () {
-                                      Navigator.pop(context); // Đóng hộp thoại
+                                      Navigator.pop(context);
                                     },
-                                    child: Text('Cancel'),
+                                    child: Text('Huỷ'),
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
-                                      final vendorId = vendor.vendorId; // Lấy vendorId
+                                      final vendorId = vendor.vendorId;
 
-                                      // Xoá sản phẩm của vendor
                                       final productsQuery = await FirebaseFirestore.instance
                                           .collection('products')
                                           .where('vendorId', isEqualTo: vendorId)
@@ -163,7 +169,7 @@ class _VendorListState extends State<VendorList> {
 
                                       Navigator.pop(context); // Đóng hộp thoại sau khi xoá thành công
                                     },
-                                    child: Text('Delete'),
+                                    child: Text('Đồng ý'),
                                   ),
                                 ],
                               );
@@ -171,7 +177,7 @@ class _VendorListState extends State<VendorList> {
                           );
                         },
                         child: Text(
-                          'Delete',
+                          'XOÁ',
                           style: TextStyle(
                             color: Colors.redAccent,
                           ),

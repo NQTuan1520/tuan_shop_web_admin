@@ -67,11 +67,11 @@ class _BannerWidgetState extends State<BannerWidget> {
                           selectedBannerId = null;
                         });
                       },
-                      child: Text('Delete'),
+                      child: Text('Xoá'),
                     ),
                   if (deletionSuccess)
                     Text(
-                      'Banner deleted successfully!',
+                      'Banner đã được xoá thành công!',
                       style: TextStyle(color: Colors.green),
                     ),
                 ],

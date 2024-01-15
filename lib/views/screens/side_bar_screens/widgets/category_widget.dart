@@ -35,7 +35,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
         if (snapshot.data!.docs.isEmpty) {
           return Center(
             child: Text(
-              'No Categories\n Added yet',
+              'Chưa có danh mục sản phẩm nào\n được thêm vào',
               style: TextStyle(
                 color: Colors.blueGrey,
                 fontSize: 30,
@@ -63,7 +63,6 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          // Khi ấn vào ảnh, thiết lập giá trị của selectedFileName tương ứng
                           selectedFileName = categoryId;
                         });
                       },
@@ -92,11 +91,11 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                             selectedFileName = null;
                           });
                         },
-                        child: Text('Delete'),
+                        child: Text('Xoá'),
                       ),
                     if (deletionSuccess)
                       Text(
-                        'Category deleted successfully!',
+                        'Danh mục đã được xoá thành công!',
                         style: TextStyle(color: Colors.green),
                       ),
                   ],
