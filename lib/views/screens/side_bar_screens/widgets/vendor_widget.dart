@@ -105,7 +105,7 @@ class _VendorListState extends State<VendorList> {
                           });
                         },
                         child: Text(
-                          'TỪ CH',
+                          'TỪ CHỐI',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold),
@@ -123,7 +123,7 @@ class _VendorListState extends State<VendorList> {
                         'ĐỒNG Ý',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.yellow),
+                            color: Colors.blue),
                       ),
                     ),
                     2),
