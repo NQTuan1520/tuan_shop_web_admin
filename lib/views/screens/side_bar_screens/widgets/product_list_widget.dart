@@ -9,7 +9,7 @@ class ProductListWidget extends StatefulWidget {
 
 class _ProductListWidgetState extends State<ProductListWidget> {
   final Stream<QuerySnapshot> _orderStream =
-  FirebaseFirestore.instance.collection('products').snapshots();
+      FirebaseFirestore.instance.collection('products').snapshots();
 
   Widget vendorData(Widget widget, int? flex) {
     return Expanded(
@@ -89,36 +89,36 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                   vendorData(
                       order['approved'] == false
                           ? ElevatedButton(
-                          onPressed: () async {
-                            await FirebaseFirestore.instance
-                                .collection('products')
-                                .doc(order['productID'])
-                                .update({
-                              'approved': true,
-                            });
-                          },
-                          child: Text(
-                            'ĐỒNG Ý',
-                            style: TextStyle(
-                                color: Colors.blueAccent,
-                                fontWeight: FontWeight.bold),
-                          ))
+                              onPressed: () async {
+                                await FirebaseFirestore.instance
+                                    .collection('products')
+                                    .doc(order['productID'])
+                                    .update({
+                                  'approved': true,
+                                });
+                              },
+                              child: Text(
+                                'ĐỒNG Ý',
+                                style: TextStyle(
+                                    color: Colors.blueAccent,
+                                    fontWeight: FontWeight.bold),
+                              ))
                           : ElevatedButton(
-                        onPressed: () async {
-                          await FirebaseFirestore.instance
-                              .collection('products')
-                              .doc(order['productID'])
-                              .update({
-                            'approved': false,
-                          });
-                        },
-                        child: Text(
-                          'TỪ CHỐI',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red),
-                        ),
-                      ),
+                              onPressed: () async {
+                                await FirebaseFirestore.instance
+                                    .collection('products')
+                                    .doc(order['productID'])
+                                    .update({
+                                  'approved': false,
+                                });
+                              },
+                              child: Text(
+                                'TỪ CHỐI',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red),
+                              ),
+                            ),
                       1),
                 ],
               );

@@ -3,6 +3,7 @@ import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/widgets/produ
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
+
   static const String routeName = '\ProductScreen';
 
   Widget _rowHeader(String text, int flex) {
@@ -18,7 +19,10 @@ class ProductScreen extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),

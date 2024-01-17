@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class WithdrawalList extends StatefulWidget {
   const WithdrawalList({super.key});
 
-
   @override
   State<WithdrawalList> createState() => _WithdrawalListState();
 }
 
 class _WithdrawalListState extends State<WithdrawalList> {
   final Stream<QuerySnapshot> _withdrewStream =
-  FirebaseFirestore.instance.collection('withdrawal').snapshots();
+      FirebaseFirestore.instance.collection('withdrawal').snapshots();
+
   Widget withdrewdata(Widget widget, int? flex) {
     return Expanded(
       flex: flex!,

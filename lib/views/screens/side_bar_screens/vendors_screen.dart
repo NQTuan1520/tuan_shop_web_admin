@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/widgets/vendor_widget.dart';
+
 class VendorsScreen extends StatefulWidget {
   static const String routeName = '\vendorScreen';
 

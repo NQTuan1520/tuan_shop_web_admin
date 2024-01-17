@@ -9,7 +9,7 @@ class BuyersListWidget extends StatefulWidget {
 
 class _BuyersListWidgetState extends State<BuyersListWidget> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('buyers').snapshots();
+      FirebaseFirestore.instance.collection('buyers').snapshots();
 
   Widget vendorData(Widget widget, int? flex) {
     return Expanded(
@@ -93,7 +93,8 @@ class _BuyersListWidgetState extends State<BuyersListWidget> {
                             builder: (BuildContext context) {
                               return AlertDialog(
                                 title: Text('CẢNH BÁO'),
-                                content: Text('Bạn có thực sự muốn xoá tài khoản Người Mua này không?'),
+                                content: Text(
+                                    'Bạn có thực sự muốn xoá tài khoản Người Mua này không?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () {
@@ -112,7 +113,8 @@ class _BuyersListWidgetState extends State<BuyersListWidget> {
                                         snapshot.data!.docs.removeAt(index);
                                       });
 
-                                      Navigator.pop(context); // Đóng hộp thoại sau khi xoá thành công
+                                      Navigator.pop(
+                                          context); // Đóng hộp thoại sau khi xoá thành công
                                     },
                                     child: Text('Đồng ý'),
                                   ),

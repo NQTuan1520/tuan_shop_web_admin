@@ -10,13 +10,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
-      options: kIsWeb || Platform.isAndroid || Platform.isIOS ? FirebaseOptions(
-          apiKey: 'AIzaSyBPcB-YV5saXVjTWMsbDQ_7Lr89CjzToAM',
-          appId: '1:851800943545:web:49ba7ce1f35ee81fcbe468',
-          messagingSenderId: '851800943545',
-          projectId: 'store-e82c3',
-          storageBucket: 'store-e82c3.appspot.com',
-      ):null);
+      options: kIsWeb || Platform.isAndroid || Platform.isIOS
+          ? FirebaseOptions(
+              apiKey: 'AIzaSyBPcB-YV5saXVjTWMsbDQ_7Lr89CjzToAM',
+              appId: '1:851800943545:web:49ba7ce1f35ee81fcbe468',
+              messagingSenderId: '851800943545',
+              projectId: 'store-e82c3',
+              storageBucket: 'store-e82c3.appspot.com',
+            )
+          : null);
   runApp(const MyApp());
 }
 
@@ -37,5 +39,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

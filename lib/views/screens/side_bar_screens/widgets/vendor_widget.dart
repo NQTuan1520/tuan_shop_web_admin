@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import '../../../models/vendor_user_models.dart';
 
 class VendorList extends StatefulWidget {
-
   @override
   _VendorListState createState() => _VendorListState();
 }
 
 class _VendorListState extends State<VendorList> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('vendors').snapshots();
+      FirebaseFirestore.instance.collection('vendors').snapshots();
 
   Widget vendorData(Widget widget, int? flex) {
     return Expanded(
@@ -64,70 +63,64 @@ class _VendorListState extends State<VendorList> {
                       ),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       vendor.businessName.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     2),
-
                 vendorData(
                     Text(
                       vendor.phoneNumber.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       vendor.cityValue.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     2),
-
                 vendorData(
                     Text(
                       vendor.stateValue.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     1),
-
                 vendorData(
                     vendor.approved == true
                         ? ElevatedButton(
-                        onPressed: () async {
-                          await FirebaseFirestore.instance
-                              .collection('vendors')
-                              .doc(vendor.vendorId)
-                              .update({
-                            'approved': false,
-                          });
-                        },
-                        child: Text(
-                          'TỪ CHỐI',
-                          style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold),
-                        ))
+                            onPressed: () async {
+                              await FirebaseFirestore.instance
+                                  .collection('vendors')
+                                  .doc(vendor.vendorId)
+                                  .update({
+                                'approved': false,
+                              });
+                            },
+                            child: Text(
+                              'TỪ CHỐI',
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ))
                         : ElevatedButton(
-                      onPressed: () async {
-                        await FirebaseFirestore.instance
-                            .collection('vendors')
-                            .doc(vendor.vendorId)
-                            .update({
-                          'approved': true,
-                        });
-                      },
-                      child: Text(
-                        'ĐỒNG Ý',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue),
-                      ),
-                    ),
+                            onPressed: () async {
+                              await FirebaseFirestore.instance
+                                  .collection('vendors')
+                                  .doc(vendor.vendorId)
+                                  .update({
+                                'approved': true,
+                              });
+                            },
+                            child: Text(
+                              'ĐỒNG Ý',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue),
+                            ),
+                          ),
                     2),
-
                 vendorData(
                     ElevatedButton(
                         onPressed: () {
@@ -136,7 +129,8 @@ class _VendorListState extends State<VendorList> {
                             builder: (BuildContext context) {
                               return AlertDialog(
                                 title: Text('CẢNH BÁO'),
-                                content: Text('Bạn có thực sự muốn xoá tài khoản Người Bán này ?'),
+                                content: Text(
+                                    'Bạn có thực sự muốn xoá tài khoản Người Bán này ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () {
@@ -148,10 +142,12 @@ class _VendorListState extends State<VendorList> {
                                     onPressed: () async {
                                       final vendorId = vendor.vendorId;
 
-                                      final productsQuery = await FirebaseFirestore.instance
-                                          .collection('products')
-                                          .where('vendorId', isEqualTo: vendorId)
-                                          .get();
+                                      final productsQuery =
+                                          await FirebaseFirestore.instance
+                                              .collection('products')
+                                              .where('vendorId',
+                                                  isEqualTo: vendorId)
+                                              .get();
 
                                       for (final doc in productsQuery.docs) {
                                         await doc.reference.delete();
@@ -167,7 +163,8 @@ class _VendorListState extends State<VendorList> {
                                         snapshot.data!.docs.removeAt(index);
                                       });
 
-                                      Navigator.pop(context); // Đóng hộp thoại sau khi xoá thành công
+                                      Navigator.pop(
+                                          context); // Đóng hộp thoại sau khi xoá thành công
                                     },
                                     child: Text('Đồng ý'),
                                   ),

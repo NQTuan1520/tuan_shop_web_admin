@@ -9,7 +9,7 @@ class OrderWidget extends StatefulWidget {
 
 class _OrderWidgetState extends State<OrderWidget> {
   final Stream<QuerySnapshot> _orderStrem =
-  FirebaseFirestore.instance.collection('orders').snapshots();
+      FirebaseFirestore.instance.collection('orders').snapshots();
 
   Widget vendorData(Widget widget, int? flex) {
     return Expanded(
@@ -61,35 +61,30 @@ class _OrderWidgetState extends State<OrderWidget> {
                       ),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       vendor['productName'],
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       "\$" + ' ' + vendor['productPrice'].toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       vendor['quantity'].toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     1),
-
                 vendorData(
                     Text(
                       vendor['fullName'],
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     2),
-
                 vendorData(
                     Text(
                       vendor['placeName'],

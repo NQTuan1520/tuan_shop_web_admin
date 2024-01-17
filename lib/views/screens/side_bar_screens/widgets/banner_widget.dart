@@ -15,7 +15,7 @@ class _BannerWidgetState extends State<BannerWidget> {
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> _bannerStream =
-    FirebaseFirestore.instance.collection('banners').snapshots();
+        FirebaseFirestore.instance.collection('banners').snapshots();
 
     return StreamBuilder<QuerySnapshot>(
       stream: _bannerStream,

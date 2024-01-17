@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/widgets/withdrawal_widget.dart';
 
 class WithdrawalScreen extends StatefulWidget {
-
   static const String routeName = '\WithdrawalScreen';
 
   @override

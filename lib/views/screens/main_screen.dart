@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
         });
         break;
 
-        case BuyersScreen.routeName:
+      case BuyersScreen.routeName:
         setState(() {
           _selectedItem = BuyersScreen();
         });

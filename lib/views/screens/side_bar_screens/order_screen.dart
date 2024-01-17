@@ -3,6 +3,7 @@ import 'package:tuan_shop_web_admin/views/screens/side_bar_screens/widgets/order
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
+
   static const String routeName = '\orderScreen';
 
   Widget _rowHeader(String text, int flex) {
@@ -18,7 +19,10 @@ class OrderScreen extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
