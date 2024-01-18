@@ -50,9 +50,10 @@ class ProductScreen extends StatelessWidget {
             children: [
               _rowHeader('ẢNH', 1),
               _rowHeader('NAME', 2),
+              _rowHeader('NHÃN HÀNG', 1),
               _rowHeader('GIÁ TIỀN', 1),
               _rowHeader('SỐ LƯỢNG', 1),
-              _rowHeader('TÊN CÔNG TY', 2),
+              _rowHeader('TÊN CÔNG TY', 1),
               _rowHeader('KIỂM DUYỆT', 1),
             ],
           ),

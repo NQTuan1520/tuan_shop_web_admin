@@ -69,15 +69,27 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                       ),
                       2),
                   vendorData(
-                      Text(
-                        "\$" + ' ' + order['productPrice'].toString(),
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Center(
+                        child: Text(
+                          order['brandName'],
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       1),
                   vendorData(
-                      Text(
-                        order['quantity'].toString(),
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Center(
+                        child: Text(
+                          "\$" + ' ' + order['productPrice'].toString(),
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      1),
+                  vendorData(
+                      Center(
+                        child: Text(
+                          order['quantity'].toString(),
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       1),
                   vendorData(
@@ -85,7 +97,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                         order['businessName'],
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      2),
+                      1),
                   vendorData(
                       order['approved'] == false
                           ? ElevatedButton(
